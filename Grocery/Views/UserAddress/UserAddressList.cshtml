@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Online_Grocey.Models.UserAddress>
+
+@{
+    ViewData["Title"] = "UserAddressList";
+}
+
+<h1>UserAddressList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UserAddressID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UserAddressID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UserAddressID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

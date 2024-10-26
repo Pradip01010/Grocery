@@ -1,0 +1,24 @@
+﻿@model Online_Grocey.Models.CustomerReview
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CustomerReview</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerRevieww)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerRevieww)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CustomerReviewID">Edit</a> |
+    <a asp-action="CustomerReviewList">Back to List</a>
+</div>

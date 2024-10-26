@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Online_Grocey.Models.Discount>
+
+@{
+    ViewData["Title"] = "DiscountList";
+}
+
+<h1>DiscountList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CouponCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount_Percent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CouponCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount_Percent)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DiscountID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DiscountID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DiscountID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

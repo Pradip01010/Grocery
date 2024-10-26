@@ -1,0 +1,21 @@
+﻿@model Online_Grocey.Models.Compare
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Compare</h4>
+    <hr />
+    <dl class="row">
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CompareID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="CompareList">Back to List</a>
+    </form>
+</div>
